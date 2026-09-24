@@ -18,13 +18,29 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-/* iPad: ダブルタップ拡大や長押し選択でゲームが中断しないようにする */
-button {
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
+/* iPad 対策1: 文字の選択・長押しメニューを全体で無効化する。
+   ゲーム中に文字を選ぶ操作は不要で、タップが「選択の開始」と解釈されると
+   click が発火せず、反応しないように感じるため */
+body {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   user-select: none;
+}
+
+/* iPad 対策2: ダブルタップ拡大の待ち時間（約0.3秒）をなくす。
+   iOS は user-scalable=no を無視するため、操作する要素すべてに指定する。
+   button だけでなく role="button" の要素にも効かせる */
+button,
+[role="button"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* iPad 対策3: タップしたことが分かるようにする。
+   tap-highlight を消しているぶん、押した瞬間の変化を大きめにとる */
+button:active,
+[role="button"]:active {
+  opacity: 0.75;
 }
 
 /* 化学式の添字 */

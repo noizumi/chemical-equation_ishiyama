@@ -1,6 +1,6 @@
 /**
  * 化学式ユーティリティ
- * - 化学式は ASCII 文字列で保持する（例: "H2O", "Ca(OH)2", "CH3COONa"）
+ * - 化学式は ASCII 文字列で保持する（例: "H2O", "Ca(OH)2", "C6H12O6"）
  * - 添字の表示は App 側で <sub> に変換する
  * - 古い iPadOS/Safari 対策のため、Optional Chaining (?.) / Nullish Coalescing (??)
  *   などの新しい構文は使わない

@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  // hover: を @media (hover: hover) で囲む。これがないと iPad でも hover が
+  // 適用され、タップ時に「ホバー状態になるだけ」で反応しないことがある
+  future: { hoverOnlyWhenSupported: true },
   content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
     extend: {

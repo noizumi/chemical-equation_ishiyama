@@ -10,7 +10,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "validate": "node scripts/validate.mjs"
+    "validate": "node scripts/validate.mjs",
+    "xlsx": "python3 scripts/substances-xlsx.py"
   },
   "dependencies": {
     "react": "^18.3.1",
